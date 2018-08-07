@@ -1,6 +1,6 @@
 {
   "name": "hoodies-react-scripts",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Hoodies configuration and scripts for Create React App.",
   "repository": "kate-ivanova/hoodies-react-scripts",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "babel-eslint": "8.2.3",
     "babel-jest": "22.4.3",
     "babel-loader": "8.0.0-beta.4",
-    "babel-plugin-named-asset-import": "^1.0.0",
+    "babel-plugin-named-asset-import": "0.0.0",
     "babel-preset-react-app": "^3.1.1",
     "bfj": "5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.1.2",
