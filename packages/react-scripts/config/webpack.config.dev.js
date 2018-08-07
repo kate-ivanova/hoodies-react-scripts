@@ -21,6 +21,8 @@ const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent')
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const postcssPresetEnv = require('postcss-preset-env');
+
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -60,6 +62,24 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
           autoprefixer({
             flexbox: 'no-2009',
           }),
+          require('postcss-import')({
+            addDependencyTo: webpack,
+          }),
+          require('postcss-size'),
+          require('postcss-assets')({
+            basePath: 'public/assets',
+            loadPaths: ['img', 'fonts'],
+          }),
+          postcssPresetEnv({
+            /* use stage 3 features + css nesting rules */
+            stage: 3,
+            features: {
+              'nesting-rules': true,
+              'color-mod-function': {
+                unresolved: 'warn'
+              }
+            }
+          })
         ],
       },
     },
